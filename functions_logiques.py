@@ -89,5 +89,5 @@ def enregistrer_historique(joueur, epreuve, resultat):
         fichier.write(f"Clés gagnées : {joueur['cles_gagnees']}\n")
         fichier.write("=" * 50 + "\n")
     print("Historique mis à jour.")
-#composer_equipe()
+
 
