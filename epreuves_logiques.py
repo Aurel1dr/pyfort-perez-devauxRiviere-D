@@ -13,13 +13,13 @@ def affiche_grille(grille, message):
 
 def demande_position():
     while True:
-        pos = input("Entrez la position (ligne,colonne) entre 0 et 2 : ") ##changer de 0 et 2 a 1 et 3
+        pos = input("Entrez la position (ligne,colonne) entre 0 et 2 : ")
         if ',' in pos:
             parts = pos.split(',')
             if len(parts) == 2 and parts[0].isdigit() and parts[1].isdigit():
                 ligne = int(parts[0])
                 colonne = int(parts[1])
-                if 0 <= ligne < 3 and 0 <= colonne < 3:  # changer ici aussi
+                if 0 <= ligne < 3 and 0 <= colonne < 3:
                     return ligne, colonne
                 else:
                     print("Position hors des limites. Réessayez.")
