@@ -19,8 +19,6 @@ def epreuve_math_factorielle():
         return False
 
 print(epreuve_math_factorielle())
-
-
 def resoudre_equation_lineaire():
     a = random.randint(0, 10)
     b = random.randint(0, 10)
