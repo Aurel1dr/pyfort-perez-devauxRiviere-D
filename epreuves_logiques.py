@@ -14,7 +14,7 @@ def affiche_grille(grille, message):
 def demande_position():
     while True:
         pos = input("Entrez la position (ligne,colonne) entre 0 et 2 : ") ##changer de 0 et 2 a 1 et 3
-        if ',' in pos:  # Vérifie si la virgule est présente
+        if ',' in pos:
             parts = pos.split(',')
             if len(parts) == 2 and parts[0].isdigit() and parts[1].isdigit():
                 ligne = int(parts[0])
@@ -43,11 +43,11 @@ def init():
     return grille
 
 def tour(joueur,grille_tir_joueur,grille_adversaire):
-    if joueur==0: ##joueur reel
+    if joueur==0:
         affiche_grille(grille_tir_joueur,"Rappel de l'historique des tirs que vous avez éffectués:")
         print("Entrez la position (ligne,colonne) entre 0 et 2 pour tirer:")
         ligne, colonne = demande_position()
-    else: ##maitre du jeu #bot
+    else:
         ligne, colonne= random.randint(0,2),random.randint(0,2)
         print(f"Le maître du jeu tire en position({ligne},{colonne})")
 
@@ -67,7 +67,7 @@ def jeu_bataille_navale():
     print("Chaque joueur doit placer 2 bateaux sur une grille 3x3.")
     print("Les bateaux sont représentés par 'B' et les tirs manqués par '.'. Les bateaux coulés sont marqués par 'x'.")
 
-    # Initialisation des grilles
+
     grille_joueur = init()
     grille_maitre = grille_vide()
     for _ in range(2):

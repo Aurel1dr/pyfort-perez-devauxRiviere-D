@@ -1,7 +1,7 @@
 import json
 import random
 
-def charger_enigme(fichier): ##charger le fichier demandé
+def charger_enigme(fichier):
     try:
         with open(fichier, 'r',encoding='utf-8') as f:
             enigmes=json.load(f)
