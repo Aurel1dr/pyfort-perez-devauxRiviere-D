@@ -16,7 +16,6 @@ def enigme_pere_fouras():
 
     print("Le Père Fouras vous pose une énigme :")
     print(question)
-
     while essais > 0:
         tentative = input("Votre réponse : ").strip().lower()
         if tentative == reponse:

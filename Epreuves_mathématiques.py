@@ -38,3 +38,5 @@ def epreuve_math_equation():
         return False
 
 print(epreuve_math_equation())
+
+def est_premier(n):
