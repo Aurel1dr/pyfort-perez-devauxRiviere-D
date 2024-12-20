@@ -91,5 +91,3 @@ def enregistrer_historique(nom_joueur, epreuve, resultat, cles_gagnees):
 
     with open("output/historique.txt", "a", encoding="utf-8") as fichier:
         fichier.write(historique_ligne)
-
-
