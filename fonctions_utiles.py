@@ -7,6 +7,7 @@ def introduction():
 
 def composer_equipe():
     equipe = []
+    leader_designe = False
 
     while True:
         try:
@@ -22,12 +23,22 @@ def composer_equipe():
         print(f"\nSaisissez les informations pour le joueur {i + 1} :")
         nom = input("Nom : ").strip()
         profession = input("Profession : ").strip()
-        leader = input("Ce joueur est-il le leader de l'équipe ? (oui/non) : ").strip().lower()
+
+        if not leader_designe:
+            leader = input("Ce joueur est-il le leader de l'équipe ? (oui/non) : ").strip().lower()
+            if leader == "oui":
+                leader_designe = True
+                est_leader = True
+            else:
+                est_leader = False
+        else:
+            print("Un leader a déjà été désigné. Ce joueur ne peut pas être le leader.")
+            est_leader = False
 
         joueur = {
             "nom": nom,
             "profession": profession,
-            "leader": leader == "oui",
+            "leader": est_leader,
             "cles_gagnees": 0
         }
 
@@ -40,7 +51,7 @@ def composer_equipe():
     print("\nVoici la composition de l'équipe :")
     for joueur in equipe:
         role = "Leader" if joueur["leader"] else "Membre"
-        print(f"- {joueur['nom']} ({joueur['profession']}) - {role}")
+        print(f"- Nom : {joueur['nom']}, Profession : {joueur['profession']}, Rôle : {role}, Clés gagnées : {joueur['cles_gagnees']}")
 
     return equipe
 

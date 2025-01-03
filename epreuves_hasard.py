@@ -12,7 +12,6 @@ def bonneteau():
 
     print("Les bonneteaux disponibles : ", ", ".join(bonneteaux))
 
-
     for tentative in range(1, 3):
 
         bonneteau_cle = random.choice(bonneteaux)

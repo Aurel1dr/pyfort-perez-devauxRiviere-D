@@ -49,7 +49,7 @@ def epreuve_math_equation():
         print("Correct vous avez gagné une clé")
         return True
     else :
-        print("Perdu ! Looserrrrrr")
+        print("Perdu !")
         return False
 
 print(epreuve_math_equation())

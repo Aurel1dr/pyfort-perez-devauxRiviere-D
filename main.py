@@ -1,4 +1,4 @@
-from enigme_pere_fouras import *
+from enigme_pere_fouras import*
 from epreuve_finale import*
 from epreuves_hasard import*
 from epreuves_logiques import*
@@ -17,7 +17,7 @@ def jeu():
     print("- Une fois 3 clés obtenues, vous pourrez accéder à l'épreuve finale.\n")
 
     equipe = composer_equipe()
-    print("\nVotre équipe est composée de :", equipe)
+
 
 
     cles_gagnees = 0
@@ -28,8 +28,9 @@ def jeu():
         print("1. Épreuve de hasard")
         print("2. Épreuve logique")
         print("3. Épreuve mathématique")
+        print("4. Enigme du Pere Fouras")
 
-        choix = input("Choisissez un type d'épreuve (1/2/3) : ")
+        choix = input("Choisissez un type d'épreuve (1/2/3/4) : ")
 
         if choix == "1":
             joueur = choisir_joueur(equipe)
@@ -41,7 +42,7 @@ def jeu():
 
         elif choix == "2":
             joueur = choisir_joueur(equipe)
-            if jeu_bataille_navale(joueur):
+            if jeu_bataille_navale():
                 cles_gagnees += 1
                 print(f"Bravo ! Vous avez gagné une clé. Clés totales : {cles_gagnees}")
             else:
@@ -49,11 +50,20 @@ def jeu():
 
         elif choix == "3":
             joueur = choisir_joueur(equipe)
-            if epreuve_maths(joueur):
+            if epreuve_maths():
                 cles_gagnees += 1
                 print(f"Bravo ! Vous avez gagné une clé. Clés totales : {cles_gagnees}")
             else:
                 print("Dommage, vous avez échoué cette épreuve.")
+
+        elif choix== "4":
+            joueur = choisir_joueur(equipe)
+            if enigme_pere_fouras():
+                cles_gagnees +=1
+                print(f"Bravo ! Vous avez gagné une clé. Clés totales : {cles_gagnees}")
+            else:
+                print("Dommage, vous avez échoué cette épreuve.")
+
         else:
             print("Choix invalide. Veuillez réessayer.")
 

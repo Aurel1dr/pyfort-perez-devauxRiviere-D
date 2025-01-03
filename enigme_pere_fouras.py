@@ -8,7 +8,7 @@ def charger_enigmes(fichier):
 
 
 def enigme_pere_fouras():
-    enigmes = charger_enigmes('enigmesPF.json')
+    enigmes = charger_enigmes("data/enigmesPF.json")
     enigme_choisie = random.choice(enigmes)
     question = enigme_choisie['question']
     reponse = enigme_choisie['reponse'].lower()
