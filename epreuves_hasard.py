@@ -17,7 +17,7 @@ def bonneteau():
 
         bonneteau_cle = random.choice(bonneteaux)
 
-        #
+
         print(f"Tentative {tentative} : Faites votre choix parmi {', '.join(bonneteaux)}.")
 
 
