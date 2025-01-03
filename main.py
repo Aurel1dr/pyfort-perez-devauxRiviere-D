@@ -34,7 +34,7 @@ def jeu():
 
         if choix == "1":
             joueur = choisir_joueur(equipe)
-            if epreuve_hasard(joueur):
+            if epreuve_hasard():
                 cles_gagnees += 1
                 print(f"Bravo ! Vous avez gagné une clé. Clés totales : {cles_gagnees}")
             else:
