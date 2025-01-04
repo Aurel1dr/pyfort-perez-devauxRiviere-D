@@ -104,6 +104,7 @@ def epreuve_math_premier():
 
 
 def epreuve_roulette_mathematique():
+    global operation_texte, resultat_correct
     nombres = []
     for _ in range(5):
         nombres.append(random.randint(1, 20))
@@ -138,7 +139,7 @@ def epreuve_roulette_mathematique():
     else:
         print(f"Faux! La bonne réponse était {resultat_correct}.")
         return False
-
+epreuve_roulette_mathematique()
 
 
 

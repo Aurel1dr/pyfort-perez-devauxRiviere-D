@@ -31,12 +31,12 @@ def demande_position():
 def init():
     grille=grille_vide()
     print("Placez vos deux bateau")
-    bateau_placé=0
-    while bateau_placé<2:
+    bateau_place=0
+    while bateau_place<2:
         ligne, colonne=demande_position()
         if grille[ligne][colonne]== " ":
             grille[ligne][colonne]="B"
-            bateau_placé+=1
+            bateau_place +=1
         else:
             print("Place déjà occupée")
     affiche_grille(grille,"Découvrez votre grille de jeu avec vos bteau")

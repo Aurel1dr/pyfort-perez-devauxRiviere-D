@@ -2,6 +2,7 @@ import random
 
 def bonneteau():
 
+    global bonneteau_cle
     bonneteaux = ['A', 'B', 'C']
 
 

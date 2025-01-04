@@ -4,7 +4,7 @@ from epreuves_hasard import*
 from epreuves_logiques import*
 from epreuves_mathematiques import*
 from fonctions_utiles import*
-from data import*
+
 
 
 
@@ -70,7 +70,7 @@ def jeu():
     print("\nFélicitations ! Vous avez obtenu les 3 clés.")
     print("Vous accédez maintenant à l'épreuve finale.\n")
 
-    if salle_De_Tresor(equipe):
+    if salle_De_Tresor():
         print("Bravo, vous avez remporté le trésor !")
     else:
         print("Dommage, vous avez échoué l'épreuve finale. Peut-être la prochaine fois !")
