@@ -92,10 +92,14 @@ def choisir_joueur(equipe):
 
 
 def enregistrer_historique(nom_joueur, epreuve, resultat, cles_gagnees):
+    if resultat:
+        sortie = "Gagné"
+    else :
+        sortie = "Perdu"
     historique_ligne = (
         f"Joueur : {nom_joueur}\n"
         f"Épreuve : {epreuve}\n"
-        f"Résultat : {resultat}\n"
+        f"Résultat : {sortie}\n"
         f"Clés gagnées : {cles_gagnees}\n"
         f"{'-' * 40}\n"
     )

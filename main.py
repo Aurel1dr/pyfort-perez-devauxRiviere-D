@@ -7,7 +7,6 @@ from fonctions_utiles import*
 
 
 
-
 def jeu():
 
     print("Bienvenue dans ce jeu inspiré de Fort Boyard!\n")
@@ -18,7 +17,7 @@ def jeu():
     equipe = composer_equipe()
     cles_gagnees = 0
 
-    while cles_gagnees < 3:
+    while cles_gagnees < 1:
         print("\n--- Choix d'une épreuve ---")
         print("1. Épreuve de hasard")
         print("2. Épreuve logique")
@@ -28,41 +27,55 @@ def jeu():
 
         if choix == "1":
             joueur = choisir_joueur(equipe)
-            if epreuve_hasard():
+            resultat = epreuve_hasard()
+            if resultat:
                 cles_gagnees += 1
                 print(f"Bravo ! Vous avez gagné une clé. Clés totales : {cles_gagnees}")
             else:
                 print("Dommage, vous avez échoué cette épreuve.")
+            enregistrer_historique(joueur['nom'], "epreuve_hasard", resultat, cles_gagnees)
+
         elif choix == "2":
             joueur = choisir_joueur(equipe)
-            if jeu_bataille_navale():
+            resultat = jeu_bataille_navale()
+            if resultat:
                 cles_gagnees += 1
                 print(f"Bravo ! Vous avez gagné une clé. Clés totales : {cles_gagnees}")
             else:
                 print("Dommage, vous avez échoué cette épreuve.")
+            enregistrer_historique(joueur['nom'], "jeu_bataille_navale", resultat, cles_gagnees)
+
         elif choix == "3":
             joueur = choisir_joueur(equipe)
-            if epreuve_maths():
+            resultat = epreuve_maths()
+            if resultat:
                 cles_gagnees += 1
                 print(f"Bravo ! Vous avez gagné une clé. Clés totales : {cles_gagnees}")
             else:
                 print("Dommage, vous avez échoué cette épreuve.")
+            enregistrer_historique(joueur['nom'], "epreuve_maths", resultat, cles_gagnees)
+
         elif choix== "4":
             joueur = choisir_joueur(equipe)
-            if enigme_pere_fouras():
-                cles_gagnees +=1
+            resultat = enigme_pere_fouras()
+            if resultat:
+                cles_gagnees += 1
                 print(f"Bravo ! Vous avez gagné une clé. Clés totales : {cles_gagnees}")
             else:
                 print("Dommage, vous avez échoué cette épreuve.")
+            enregistrer_historique(joueur['nom'], "enigme_pere_fouras", resultat, cles_gagnees)
         else:
             print("Choix invalide. Veuillez réessayer.")
+
     print("\nFélicitations ! Vous avez obtenu les 3 clés.")
     print("Vous accédez maintenant à l'épreuve finale.\n")
 
-    if salle_De_Tresor():
+    resultat = salle_De_Tresor()
+    if resultat:
         print("Bravo, vous avez remporté le trésor !")
     else:
         print("Dommage, vous avez échoué l'épreuve finale. Peut-être la prochaine fois !")
+    enregistrer_historique(joueur['nom'], "salle_De_Tresor", resultat, cles_gagnees)
 
 
 if __name__ == "__main__":

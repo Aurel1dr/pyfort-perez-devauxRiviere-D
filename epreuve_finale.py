@@ -3,13 +3,15 @@ import random
 
 
 def salle_De_Tresor():
-    with open('indicesSalles.json', 'r', encoding='utf-8') as f:
+    with open('data/indicesSalle.json', 'r', encoding='utf-8') as f:
         jeu_tv = json.load(f)
 
+    jeu_tv = jeu_tv["Fort Boyard"]
     annee = random.choice(list(jeu_tv.keys()))
-    emission = random.choice(jeu_tv[annee])
-    indices = emission['indices']
-    mot_code = emission['mot_code'].lower()
+    emission = random.choice(list(jeu_tv[annee].keys()))
+    emission = jeu_tv[annee][emission]
+    indices = emission['Indices']
+    mot_code = emission['MOT-CODE'].lower()
     essais = 3
     reponse_correcte = False
 
@@ -30,7 +32,5 @@ def salle_De_Tresor():
                 indices.pop(3)
         else:
             print(f"Vous avez échoué. Le mot-code correct était : {mot_code}.")
-    if reponse_correcte:
-        print("Félicitations ! Vous avez trouvé le mot-code et gagné le trésor !")
-    else:
-        print("Malheureusement, vous n'avez pas pu accéder au trésor.")
+
+    return reponse_correcte
