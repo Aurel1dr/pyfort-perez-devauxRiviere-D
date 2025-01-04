@@ -15,11 +15,8 @@ def jeu():
     print("- Vous devez constituer une équipe de maximum 3 joueurs.\n")
     print("- Vous participerez à des épreuves pour gagner des clés.\n")
     print("- Une fois 3 clés obtenues, vous pourrez accéder à l'épreuve finale.\n")
-
     equipe = composer_equipe()
-
     cles_gagnees = 0
-
 
     while cles_gagnees < 3:
         print("\n--- Choix d'une épreuve ---")
@@ -27,7 +24,6 @@ def jeu():
         print("2. Épreuve logique")
         print("3. Épreuve mathématique")
         print("4. Enigme du Pere Fouras")
-
         choix = input("Choisissez un type d'épreuve (1/2/3/4) : ")
 
         if choix == "1":
@@ -37,7 +33,6 @@ def jeu():
                 print(f"Bravo ! Vous avez gagné une clé. Clés totales : {cles_gagnees}")
             else:
                 print("Dommage, vous avez échoué cette épreuve.")
-
         elif choix == "2":
             joueur = choisir_joueur(equipe)
             if jeu_bataille_navale():
@@ -45,7 +40,6 @@ def jeu():
                 print(f"Bravo ! Vous avez gagné une clé. Clés totales : {cles_gagnees}")
             else:
                 print("Dommage, vous avez échoué cette épreuve.")
-
         elif choix == "3":
             joueur = choisir_joueur(equipe)
             if epreuve_maths():
@@ -53,7 +47,6 @@ def jeu():
                 print(f"Bravo ! Vous avez gagné une clé. Clés totales : {cles_gagnees}")
             else:
                 print("Dommage, vous avez échoué cette épreuve.")
-
         elif choix== "4":
             joueur = choisir_joueur(equipe)
             if enigme_pere_fouras():
@@ -61,10 +54,8 @@ def jeu():
                 print(f"Bravo ! Vous avez gagné une clé. Clés totales : {cles_gagnees}")
             else:
                 print("Dommage, vous avez échoué cette épreuve.")
-
         else:
             print("Choix invalide. Veuillez réessayer.")
-
     print("\nFélicitations ! Vous avez obtenu les 3 clés.")
     print("Vous accédez maintenant à l'épreuve finale.\n")
 

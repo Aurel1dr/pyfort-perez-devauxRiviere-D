@@ -63,8 +63,8 @@ def epreuve_math_premier():
     n = random.randint(10, 20)
     print(f"Épreuve de Mathématiques : Trouver le nombre premier le plus proche de {n}.")
     reponse = int(input("Votre réponse : "))
-
     solution = premier_plus_proche(n)
+
     if reponse == solution:
         print("Correct! Vous gagnez une clé.")
         return True
@@ -80,19 +80,16 @@ def epreuve_roulette_mathematique():
     nombres = []
     for _ in range(5):
         nombres.append(random.randint(1, 20))
-
     operation = random.choice(["addition", "soustraction", "multiplication"])
 
     if operation == "addition":
         resultat_correct = sum(nombres)
         operation_texte = "une addition"
-
     elif operation == "soustraction":
         resultat_correct = nombres[0]
         for num in nombres[1:]:
             resultat_correct -= num
         operation_texte = "une soustraction"
-
     elif operation == "multiplication":
         resultat_correct = 1
         for num in nombres:
@@ -100,9 +97,7 @@ def epreuve_roulette_mathematique():
         operation_texte = "une multiplication"
 
     print(f"Nombres sur la roulette : {nombres}")
-
     print(f"Calculez le résultat en combinant ces nombres avec {operation_texte}.")
-
     reponse = int(input("Votre réponse : "))
 
     if reponse == resultat_correct:

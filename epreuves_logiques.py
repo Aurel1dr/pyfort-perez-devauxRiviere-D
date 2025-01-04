@@ -48,28 +48,27 @@ def init():
         if grille[ligne][colonne]== " ":
             grille[ligne][colonne]="B"
             bateau_place +=1
-
         else:
             print("Place déjà occupée")
     affiche_grille(grille,"Découvrez votre grille de jeu avec vos bteau")
 
     return grille
 
+
+
 def tour(joueur,grille_tir_joueur,grille_adversaire):
+
     if joueur==0:
         affiche_grille(grille_tir_joueur,"Rappel de l'historique des tirs que vous avez éffectués:")
         print("Entrez la position (ligne,colonne) entre 0 et 2 pour tirer:")
         ligne, colonne = demande_position()
-
     else:
         ligne, colonne= random.randint(0,2),random.randint(0,2)
         print(f"Le maître du jeu tire en position({ligne},{colonne})")
-
     if grille_adversaire[ligne][colonne]=="B":
         print("Touché coulé")
         grille_tir_joueur[ligne][colonne]="x"
         grille_tir_joueur[ligne][colonne]="x"
-
     else:
         print("Dans l'eau...")
         grille_tir_joueur[ligne][colonne] = "."
@@ -86,20 +85,17 @@ def jeu_bataille_navale():
     print("Bienvenue dans le jeu de bataille navale simplifié !")
     print("Chaque joueur doit placer 2 bateaux sur une grille 3x3.")
     print("Les bateaux sont représentés par 'B' et les tirs manqués par '.'. Les bateaux coulés sont marqués par 'x'.")
-
-
     grille_joueur = init()
     grille_maitre = grille_vide()
+
     for _ in range(2):
         while True:
             ligne, colonne = random.randint(0, 2), random.randint(0, 2)
             if grille_maitre[ligne][colonne] == " ":
                 grille_maitre[ligne][colonne] = "B"
                 break
-
     grille_tirs_joueur = grille_vide()
     grille_tirs_maitre = grille_vide()
-
     joueur = 0
 
     while True:

@@ -41,13 +41,11 @@ def composer_equipe():
             "leader": est_leader,
             "cles_gagnees": 0
         }
-
         equipe.append(joueur)
 
     if not any(joueur["leader"] for joueur in equipe):
         print("\nAucun leader désigné. Le premier joueur sera automatiquement le leader.")
         equipe[0]["leader"] = True
-
     print("\nVoici la composition de l'équipe :")
     for joueur in equipe:
         role = "Leader" if joueur["leader"] else "Membre"

@@ -30,7 +30,6 @@ def salle_De_Tresor():
                 indices.pop(3)
         else:
             print(f"Vous avez échoué. Le mot-code correct était : {mot_code}.")
-
     if reponse_correcte:
         print("Félicitations ! Vous avez trouvé le mot-code et gagné le trésor !")
     else:

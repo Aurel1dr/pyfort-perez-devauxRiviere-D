@@ -5,16 +5,12 @@ def bonneteau():
     global bonneteau_cle
     bonneteaux = ['A', 'B', 'C']
 
-
     print("Bienvenue au jeu de Bonneteau !")
     print("Règles : Vous devez deviner sous quel bonneteau (A, B ou C) se cache la clé.")
     print("Vous avez 2 essais pour le trouver.")
-
-
     print("Les bonneteaux disponibles : ", ", ".join(bonneteaux))
 
     for tentative in range(1, 3):
-
         bonneteau_cle = random.choice(bonneteaux)
         print(f"Tentative {tentative} : Faites votre choix parmi {', '.join(bonneteaux)}.")
         choix_joueur = input("Entrez votre choix (A, B ou C) : ").strip().upper()
