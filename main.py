@@ -18,8 +18,6 @@ def jeu():
 
     equipe = composer_equipe()
 
-
-
     cles_gagnees = 0
 
 

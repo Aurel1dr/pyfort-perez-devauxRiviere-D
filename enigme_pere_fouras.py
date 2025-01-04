@@ -27,8 +27,3 @@ def enigme_pere_fouras():
         else:
             print(f"Vous avez échoué. La réponse correcte était : {reponse}.")
             return False
-
-
-
-
-

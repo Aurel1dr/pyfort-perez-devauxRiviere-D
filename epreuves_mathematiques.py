@@ -9,8 +9,6 @@ def factorielle(n):
 
 
 
-
-
 def epreuve_math_factorielle():
     alea = random.randint(0,10)
     print("Calculer la factorielle de",alea)
@@ -23,20 +21,11 @@ def epreuve_math_factorielle():
 
 
 
-
-
-
-
-
 def resoudre_equation_lineaire():
     a = random.randint(0, 10)
     b = random.randint(0, 10)
     x = -b/a
     return a, b ,x
-
-
-
-
 
 
 
@@ -53,11 +42,6 @@ def epreuve_math_equation():
 
 
 
-
-
-
-
-
 def est_premier(n):
     if n<=1:
         return False
@@ -68,17 +52,10 @@ def est_premier(n):
 
 
 
-
-
-
 def premier_plus_proche(n):
     while not est_premier(n):
         n = n + 1
     return n
-
-
-
-
 
 
 
@@ -94,11 +71,6 @@ def epreuve_math_premier():
     else:
         print(f"Faux! La bonne réponse était {solution}.")
         return False
-
-
-
-
-
 
 
 
@@ -139,9 +111,6 @@ def epreuve_roulette_mathematique():
     else:
         print(f"Faux! La bonne réponse était {resultat_correct}.")
         return False
-
-
-
 
 
 

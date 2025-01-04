@@ -1,15 +1,23 @@
 import random
+
+
 def grille_vide():
     return[[" " for _ in range(3)]for _ in range (3)]
 
+
+
 def suiv(joueur):
     return(joueur+1)%2
+
+
 
 def affiche_grille(grille, message):
     print(message)
     for ligne in grille:
         print(" | " + " | ".join(ligne) + " |")
     print("-" * 14)
+
+
 
 def demande_position():
     while True:
@@ -28,18 +36,23 @@ def demande_position():
         else:
             print("Format invalide. Utilisez le format 'ligne,colonne'.")
 
+
+
 def init():
     grille=grille_vide()
     print("Placez vos deux bateau")
     bateau_place=0
+
     while bateau_place<2:
         ligne, colonne=demande_position()
         if grille[ligne][colonne]== " ":
             grille[ligne][colonne]="B"
             bateau_place +=1
+
         else:
             print("Place déjà occupée")
     affiche_grille(grille,"Découvrez votre grille de jeu avec vos bteau")
+
     return grille
 
 def tour(joueur,grille_tir_joueur,grille_adversaire):
@@ -47,6 +60,7 @@ def tour(joueur,grille_tir_joueur,grille_adversaire):
         affiche_grille(grille_tir_joueur,"Rappel de l'historique des tirs que vous avez éffectués:")
         print("Entrez la position (ligne,colonne) entre 0 et 2 pour tirer:")
         ligne, colonne = demande_position()
+
     else:
         ligne, colonne= random.randint(0,2),random.randint(0,2)
         print(f"Le maître du jeu tire en position({ligne},{colonne})")
@@ -55,12 +69,18 @@ def tour(joueur,grille_tir_joueur,grille_adversaire):
         print("Touché coulé")
         grille_tir_joueur[ligne][colonne]="x"
         grille_tir_joueur[ligne][colonne]="x"
+
     else:
         print("Dans l'eau...")
         grille_tir_joueur[ligne][colonne] = "."
 
+
+
+
 def gagne(grille_tirs_joueur):
     return sum(row.count("x") for row in grille_tirs_joueur) == 2
+
+
 
 def jeu_bataille_navale():
     print("Bienvenue dans le jeu de bataille navale simplifié !")
@@ -81,6 +101,7 @@ def jeu_bataille_navale():
     grille_tirs_maitre = grille_vide()
 
     joueur = 0
+
     while True:
         if joueur == 0:
             print("C'est votre tour !")
