@@ -10,7 +10,7 @@ from fonctions_utiles import*
 
 def jeu():
 
-    print("Bienvenue dans le jeu de l'aventure !\n")
+    print("Bienvenue dans ce jeu inspiré de Fort Boyard!\n")
     print("Règles du jeu :\n")
     print("- Vous devez constituer une équipe de maximum 3 joueurs.\n")
     print("- Vous participerez à des épreuves pour gagner des clés.\n")

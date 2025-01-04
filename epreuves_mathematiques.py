@@ -139,7 +139,7 @@ def epreuve_roulette_mathematique():
     else:
         print(f"Faux! La bonne réponse était {resultat_correct}.")
         return False
-epreuve_roulette_mathematique()
+
 
 
 

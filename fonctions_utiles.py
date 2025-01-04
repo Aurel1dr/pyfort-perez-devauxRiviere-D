@@ -76,9 +76,11 @@ def menu_epreuves():
 
 def choisir_joueur(equipe):
     print("\nChoisissez un joueur pour cette épreuve :")
-    for i, joueur in enumerate(equipe, start=1):
+    index = 1
+    for joueur in equipe:
         role = "Leader" if joueur["leader"] else "Membre"
-        print(f"{i}. {joueur['nom']} ({joueur['profession']}) - {role}")
+        print(f"{index}. {joueur['nom']} ({joueur['profession']}) - {role}")
+        index += 1
 
     while True:
         try:
