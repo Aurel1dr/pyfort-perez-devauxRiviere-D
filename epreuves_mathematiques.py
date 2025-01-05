@@ -1,7 +1,19 @@
+# Fichier : epreuves_mathematiques.py
+# Projet : Fort Boyard Simulator
+# Auteurs : Aurélien Devaux-Riviere
+# Description : Ce fichier contient les fonctions liées aux épreuves mathématiques,
+# où les joueurs doivent résoudre divers problèmes pour gagner des clés.
+
+
 import random
 
 
 def factorielle(n):
+
+    """Rôle :Calcule la factorielle d'un entier n.
+    Paramètres :n (int) : L'entier dont on veut calculer la factorielle.
+    Retourne :int : La factorielle de n."""
+
     factorielle = 1
     for i in range(2,n+1):
         factorielle = factorielle * i
@@ -10,6 +22,11 @@ def factorielle(n):
 
 
 def epreuve_math_factorielle():
+
+    """Rôle :Pose une épreuve où le joueur doit calculer la factorielle d'un nombre donné.
+        Paramètres :Aucun.
+        Retourne :bool : True si le joueur a donné la bonne réponse, False sinon."""
+
     alea = random.randint(0,10)
     print("Calculer la factorielle de",alea)
     x=int(input())
@@ -22,6 +39,11 @@ def epreuve_math_factorielle():
 
 
 def resoudre_equation_lineaire():
+
+    """Rôle :Génère une équation linéaire de la forme ax + b = 0 et calcule sa solution.
+       Paramètres : Aucun.
+       Retourne :tuple : Contient les coefficients a, b et la solution x de l'équation."""
+
     a = random.randint(0, 10)
     b = random.randint(0, 10)
     x = -b/a
@@ -30,6 +52,11 @@ def resoudre_equation_lineaire():
 
 
 def epreuve_math_equation():
+
+    """Rôle :Pose une épreuve où le joueur doit résoudre une équation linéaire.
+       Paramètres :Aucun.
+       Retourne : bool : True si le joueur a donné la bonne réponse, False sinon."""
+
     a,b,x= resoudre_equation_lineaire()
     print("Résoudre l'équation : ", a, "x + ", b," = 0")
     valeur = float(input("Quelle est la valeur de x :"))
@@ -43,6 +70,11 @@ def epreuve_math_equation():
 
 
 def est_premier(n):
+
+    """Rôle :Vérifie si un nombre est premier.
+     Paramètres :n (int) : Le nombre à vérifier.
+     Retourne :bool : True si le nombre est premier, False sinon."""
+
     if n<=1:
         return False
     for i in range(2, int(n**0.5)+1):
@@ -53,6 +85,11 @@ def est_premier(n):
 
 
 def premier_plus_proche(n):
+
+    """Rôle :Trouve le premier nombre premier supérieur ou égal à n.
+        Paramètres :n (int) : Le point de départ pour trouver un nombre premier.
+        Retourne :int : Le premier nombre premier trouvé."""
+
     while not est_premier(n):
         n = n + 1
     return n
@@ -60,6 +97,11 @@ def premier_plus_proche(n):
 
 
 def epreuve_math_premier():
+
+    """Rôle :Pose une épreuve où le joueur doit trouver le nombre premier le plus proche d'un nombre donné.
+      Paramètres :Aucun.
+      Retourne :bool : True si le joueur a donné la bonne réponse, False sinon."""
+
     n = random.randint(10, 20)
     print(f"Épreuve de Mathématiques : Trouver le nombre premier le plus proche de {n}.")
     reponse = int(input("Votre réponse : "))
@@ -76,6 +118,11 @@ def epreuve_math_premier():
 
 
 def epreuve_roulette_mathematique():
+
+    """Rôle : Pose une épreuve où le joueur doit calculer le résultat d'une opération mathématique sur une liste de nombres générés aléatoirement.
+        Paramètres :Aucun.
+        Retourne :bool : True si le joueur a donné la bonne réponse, False sinon."""
+
     global operation_texte, resultat_correct
     nombres = []
     for _ in range(5):
@@ -113,6 +160,11 @@ def epreuve_roulette_mathematique():
 
 
 def epreuve_maths():
+
+    """Rôle : Sélectionne aléatoirement une épreuve mathématique et l'exécute.
+    Paramètres :Aucun.
+    Retourne :bool : Le résultat de l'épreuve sélectionnée (True pour succès, False pour échec)."""
+
     epreuves = [
         epreuve_math_factorielle,
         epreuve_math_equation,

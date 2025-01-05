@@ -1,17 +1,40 @@
+# Fichier : epreuves_logiques.py
+# Projet : Fort Boyard Simulator
+# Auteurs : Ivan Perez
+# Description : Ce fichier contient les fonctions liées à l'épreuve de bataille navale, où les joueurs
+# doivent placer leurs bateaux et attaquer la grille de l'adversaire pour gagner.
+
+
 import random
 
 
 def grille_vide():
+
+    """Rôle :Génère une grille vide de 3x3 pour le jeu.
+      Paramètres :Aucun.
+      Retourne :list : Une liste 2D de dimensions 3x3 remplie d'espaces vides (" ")."""
+
     return[[" " for _ in range(3)]for _ in range (3)]
 
 
 
 def suiv(joueur):
+
+    """Rôle :Alterne le joueur actif (0 pour le joueur humain, 1 pour le maître du jeu).
+        Paramètres :joueur (int) : L'indice du joueur actuel (0 ou 1).
+        Retourne :int : L'indice du joueur suivant (0 ou 1)."""
+
     return(joueur+1)%2
 
 
 
 def affiche_grille(grille, message):
+
+    """Rôle :Affiche une grille 3x3 avec un message explicatif.
+      Paramètres :grille (list) : La grille à afficher (liste 2D).
+                message (str) : Un message à afficher avant la grille.
+      Retourne :Rien (affichage à l'écran)."""
+
     print(message)
     for ligne in grille:
         print(" | " + " | ".join(ligne) + " |")
@@ -20,6 +43,11 @@ def affiche_grille(grille, message):
 
 
 def demande_position():
+
+    """Rôle :Demande à l'utilisateur d'entrer une position valide sur la grille.
+        Paramètres :Aucun.
+        Retourne :tuple : Les coordonnées (ligne, colonne) saisies par l'utilisateur."""
+
     while True:
         pos = input("Entrez la position (ligne,colonne) entre 0 et 2 : ")
         if ',' in pos:
@@ -39,6 +67,11 @@ def demande_position():
 
 
 def init():
+
+    """Rôle :Permet au joueur de placer ses deux bateaux sur une grille 3x3.
+       Paramètres :Aucun.
+       Retourne :list : Une grille 3x3 avec deux bateaux positionnés."""
+
     grille=grille_vide()
     print("Placez vos deux bateau")
     bateau_place=0
@@ -58,11 +91,18 @@ def init():
 
 def tour(joueur,grille_tir_joueur,grille_adversaire):
 
-    if joueur==0:
+    """Rôle : Gère un tour de jeu où le joueur ou le maître du jeu attaque la grille adverse.
+      Paramètres :
+          joueur (int) : Indique le joueur actif (0 pour le joueur humain, 1 pour le maître du jeu).
+          grille_tir_joueur (list) : La grille des tirs du joueur actif.
+          grille_adversaire (list) : La grille contenant les bateaux de l'adversaire.
+      Retourne :Rien (met à jour les grilles et affiche les résultats)."""
+
+    if joueur==0: # Tour du joueur humain
         affiche_grille(grille_tir_joueur,"Rappel de l'historique des tirs que vous avez éffectués:")
         print("Entrez la position (ligne,colonne) entre 0 et 2 pour tirer:")
         ligne, colonne = demande_position()
-    else:
+    else:        # Tour du maître du jeu
         ligne, colonne= random.randint(0,2),random.randint(0,2)
         print(f"Le maître du jeu tire en position({ligne},{colonne})")
 
@@ -78,11 +118,21 @@ def tour(joueur,grille_tir_joueur,grille_adversaire):
 
 
 def gagne(grille_tirs_joueur):
+
+    """Rôle :Vérifie si un joueur a coulé les deux bateaux de son adversaire.
+    Paramètres :grille_tirs_joueur (list) : La grille des tirs du joueur.
+    Retourne :bool : True si les deux bateaux sont coulés, False sinon."""
+
     return sum(row.count("x") for row in grille_tirs_joueur) == 2
 
 
 
 def jeu_bataille_navale():
+    """Rôle :Gère l'ensemble de l'épreuve de bataille navale.
+       Paramètres :Aucun.
+       Retourne :bool : True si le joueur humain gagne, False si le maître du jeu gagne."""
+
+
     print("Bienvenue dans le jeu de bataille navale simplifié !")
     print("Chaque joueur doit placer 2 bateaux sur une grille 3x3.")
     print("Les bateaux sont représentés par 'B' et les tirs manqués par '.'. Les bateaux coulés sont marqués par 'x'.")
@@ -95,11 +145,13 @@ def jeu_bataille_navale():
             if grille_maitre[ligne][colonne] == " ":
                 grille_maitre[ligne][colonne] = "B"
                 break
+
+    # Initialisation des grilles
     grille_tirs_joueur = grille_vide()
     grille_tirs_maitre = grille_vide()
     joueur = 0
 
-    while True:
+    while True: # Boucle principale du jeu
         if joueur == 0:
             print("C'est votre tour !")
             tour(joueur, grille_tirs_joueur, grille_maitre)
