@@ -122,7 +122,89 @@ Ce projet contient plusieurs modules permettant de jouer à un jeu d'énigmes et
 
 - **`gagne`** : Vérifie si un joueur a gagné la partie en fonction de sa grille de tir. Si le joueur a coulé deux bateaux (indiqués par deux 'X'), il remporte la partie.
 
+
+### Gestion des Entrées et Erreurs
+
+### Traitement des Valeurs et des Intervalles
+
+Le code gère les valeurs et les intervalles en vérifiant que les entrées de l'utilisateur respectent des conditions préalablement définies. Par exemple, pour les choix de l'utilisateur dans le menu d'épreuves, le code s'assure que l'entrée est un nombre entier compris entre 1 et 4. Si l'utilisateur entre une valeur en dehors de cet intervalle, une erreur est générée et un message explicatif est affiché, demandant à l'utilisateur de réessayer avec une valeur valide.
+
+De même, lors de la saisie des réponses aux énigmes, le code vérifie que les réponses sont sous forme de texte ou de chiffres, selon le type d'énigme, et que celles-ci respectent les critères définis (longueur de la chaîne, caractères autorisés, etc.).
+
+## Méthodes de Gestion des Erreurs
+
+Les principales méthodes utilisées pour gérer les erreurs potentielles sont les suivantes :
+
+- **Validation des Entrées** : Avant chaque saisie de l'utilisateur, le code vérifie si la donnée est conforme au format attendu. Par exemple, si l'on attend un nombre entier, une vérification est effectuée pour s'assurer que l'utilisateur n'entre pas de texte ou de valeurs non numériques.
+
+- **Boucles de Réessai** : Lorsqu'une erreur est détectée, une boucle de réessai permet à l'utilisateur de tenter une nouvelle entrée, jusqu'à ce qu'une entrée valide soit fournie. Ceci est utilisé, par exemple, lorsque l'utilisateur fait un mauvais choix d'épreuve ou répond mal à une énigme.
+
+- **Messages d'Erreur** : Des messages clairs et informatifs sont affichés lorsque des erreurs surviennent, expliquant à l'utilisateur ce qui a échoué et comment il peut corriger son erreur. Ces messages sont rédigés de manière à être compréhensibles pour l'utilisateur, afin qu'il sache exactement ce qu'il doit faire.
+
+### Liste des Bugs Connus
+
+- **Erreurs dans l'épreuve de mathématiques (factorielle)** : Si l'utilisateur entre un nombre trop élevé pour calculer la factorielle (par exemple, 1000!), le programme peut rencontrer un dépassement de mémoire ou une erreur d'exécution. 
+
+- **Erreur de calcul dans les épreuves de logique** : Lors des épreuves de logique, notamment la bataille navale, si les grilles sont corrompues ou mal initialisées, le jeu peut planter ou ne pas fonctionner correctement. 
+
 ---
+
+### Tests et Validation
+
+### Stratégies de Test
+
+Les stratégies de test sont cruciales pour s'assurer que toutes les fonctionnalités du jeu fonctionnent comme prévu et que les erreurs potentielles sont identifiées et corrigées avant la mise en production. Les tests sont réalisés à la fois manuellement et automatiquement pour vérifier la validité du code et la stabilité du jeu.
+
+### Cas de Test Spécifiques et Résultats
+
+1. **Test de Validation des Choix d'Épreuve**  
+   **Objectif** : Vérifier que le joueur peut correctement choisir une épreuve parmi les 4 proposées et que des erreurs sont levées pour des choix invalides.  
+   **Cas de test** :  
+- Entrée valide : Choix de "1" pour l'épreuve de logique  
+- Entrée invalide : Choix de "5" ou "0"  
+   **Résultat attendu** :  
+- Pour un choix valide, l'épreuve correspondante est lancée.  
+- Pour un choix invalide, un message d'erreur est affiché et l'utilisateur est invité à entrer un nombre entre 1 et 4.  
+   **Résultat obtenu** : Conformité avec les attentes. Le test est passé avec succès.
+
+2. **Test de Réponse aux Énigmes**  
+   **Objectif** : Vérifier que le joueur peut répondre correctement aux énigmes et que trois tentatives sont autorisées.  
+   **Cas de test** :  
+- Réponse correcte à la première tentative  
+- Réponse incorrecte suivie de deux réponses incorrectes supplémentaires  
+   **Résultat attendu** :  
+- Si la réponse est correcte au premier essai, l'énigme est validée et le joueur peut passer à l'épreuve suivante.  
+- Si les trois réponses sont incorrectes, un message de fin d'épreuve est affiché et le joueur est informé qu'il a perdu l'épreuve.  
+   **Résultat obtenu** : Conformité avec les attentes. Le test est passé avec succès.
+
+3. **Test de la Factorielle (Épreuve Mathématique)**  
+   **Objectif** : Vérifier le bon fonctionnement de l'épreuve demandant de calculer la factorielle d'un nombre.  
+   **Cas de test** :  
+- Entrée valide : Calcul de la factorielle de "5" (résultat attendu : 120)  
+- Entrée invalide : Tentative de calcul de la factorielle d'un nombre trop grand (par exemple, "1000")  
+   **Résultat attendu** :  
+- Pour une entrée valide, le résultat est correctement calculé et affiché.  
+- Pour une entrée invalide, une gestion d'exception empêche le plantage du programme et un message d'erreur est affiché.  
+   **Résultat obtenu** : Le test a échoué pour les très grands nombres, une gestion d'exception est à mettre en place pour éviter les dépassements de mémoire.
+
+4. **Test de la Bataille Navale**  
+   **Objectif** : Vérifier que le jeu de bataille navale fonctionne correctement, avec un joueur qui réussit à couler des bateaux et un autre qui perd.  
+   **Cas de test** :  
+- Un joueur gagne en coulant les deux bateaux adverses.  
+- Un joueur perd en n'ayant pas coulé ses deux bateaux avant que l'adversaire ne les ait coulés.  
+   **Résultat attendu** :  
+- Le joueur qui coule les deux bateaux remporte la partie.  
+- Si la partie se termine avant, un message de "victoire" ou "défaite" est affiché.  
+   **Résultat obtenu** : Le test a passé avec succès, mais des améliorations peuvent être apportées pour les cas où la grille est corrompue.
+
+5. **Test de Réponse au Jeu de Dés**  
+   **Objectif** : Vérifier que l'épreuve de jeu de dés fonctionne correctement, avec une probabilité aléatoire de victoire ou de défaite.  
+   **Cas de test** :
+ - Lancer du dé et obtenir un résultat supérieur à une certaine valeur pour gagner (par exemple, un jet supérieur ou égal à 4).  
+   **Résultat attendu** :  
+- Si le résultat est supérieur ou égal à 4, le joueur gagne.  
+- Si le résultat est inférieur à 4, le joueur perd.  
+   **Résultat obtenu** : Conformité avec les attentes. Le test a passé avec succès.
 
 ## Installation et Lancement
 
@@ -135,6 +217,5 @@ Pour jouer au jeu, vous devez d'abord charger les modules nécessaires. Ensuite,
 ---
 
 Ce jeu offre une expérience interactive avec des énigmes, des épreuves mathématiques, de logique et de hasard pour défier vos compétences et obtenir des points. Préparez-vous à relever le défi !
-
 
 
