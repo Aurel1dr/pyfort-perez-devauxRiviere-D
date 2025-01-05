@@ -137,3 +137,4 @@ Pour jouer au jeu, vous devez d'abord charger les modules nécessaires. Ensuite,
 Ce jeu offre une expérience interactive avec des énigmes, des épreuves mathématiques, de logique et de hasard pour défier vos compétences et obtenir des points. Préparez-vous à relever le défi !
 
 
+
