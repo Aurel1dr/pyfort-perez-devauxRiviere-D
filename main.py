@@ -1,6 +1,6 @@
 # Fichier : main.py
 # Projet : Fort Boyard Simulator
-# Auteurs : [Vos noms ici]
+# Auteurs : Aurélien Devaux-Riviere
 # Description : Point d'entrée principal du jeu. Ce fichier coordonne les différentes épreuves
 # et gère le déroulement global, de la création de l'équipe à l'épreuve finale.
 
