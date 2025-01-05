@@ -33,6 +33,8 @@ Ensuite il faut ouvrir Gitbash et écrire 'git clone' suivi de l'url du lien que
 
 Pour lancer ce programme il suffit de lancer le programme 'main'.
 
+
+
 #### Algorithme de jeu():
 
 1. Lancement de la fonction introduction qui donne les règles du jeu et composer_équipes qui crée l'équipe qui vas participer.
@@ -123,6 +125,9 @@ Ce projet contient plusieurs modules permettant de jouer à un jeu d'énigmes et
 - **`gagne`** : Vérifie si un joueur a gagné la partie en fonction de sa grille de tir. Si le joueur a coulé deux bateaux (indiqués par deux 'X'), il remporte la partie.
 
 
+
+
+
 ### Gestion des Entrées et Erreurs
 
 ### Traitement des Valeurs et des Intervalles
@@ -148,6 +153,9 @@ Les principales méthodes utilisées pour gérer les erreurs potentielles sont l
 - **Erreur de calcul dans les épreuves de logique** : Lors des épreuves de logique, notamment la bataille navale, si les grilles sont corrompues ou mal initialisées, le jeu peut planter ou ne pas fonctionner correctement. 
 
 ---
+
+
+
 
 ### Tests et Validation
 
@@ -206,6 +214,8 @@ Les stratégies de test sont cruciales pour s'assurer que toutes les fonctionnal
 - Si le résultat est inférieur à 4, le joueur perd.  
    **Résultat obtenu** : Conformité avec les attentes. Le test a passé avec succès.
 
+
+
 ## Installation et Lancement
 
 Pour jouer au jeu, vous devez d'abord charger les modules nécessaires. Ensuite, vous pouvez suivre les étapes dans le jeu pour choisir un joueur, participer à des épreuves, et tenter de résoudre les énigmes.
@@ -216,6 +226,6 @@ Pour jouer au jeu, vous devez d'abord charger les modules nécessaires. Ensuite,
 
 ---
 
-Ce jeu offre une expérience interactive avec des énigmes, des épreuves mathématiques, de logique et de hasard pour défier vos compétences et obtenir des points. Préparez-vous à relever le défi !
+Ce jeu offre une expérience interactive avec des énigmes, des épreuves mathématiques, de logique et de hasard pour défier vos compétences et obtenir des points. Amusez-vous bien avec ce jeu 
 
 
