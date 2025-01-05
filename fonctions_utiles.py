@@ -31,6 +31,7 @@ def composer_equipe():
                 est_leader = True
             else:
                 est_leader = False
+
         else:
             print("Un leader a déjà été désigné. Ce joueur ne peut pas être le leader.")
             est_leader = False

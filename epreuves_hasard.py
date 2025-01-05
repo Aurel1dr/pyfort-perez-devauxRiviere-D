@@ -21,6 +21,7 @@ def bonneteau():
                 return True
             else:
                 print(f"Dommage, la clé n'était pas sous le bonneteau {choix_joueur}. Essayez encore.")
+
         else:
             print("Choix invalide. Veuillez entrer A, B ou C.")
     print(f"Vous avez perdu ! La clé se trouvait sous le bonneteau {bonneteau_cle}.")

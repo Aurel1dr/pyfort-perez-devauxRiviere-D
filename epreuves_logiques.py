@@ -65,6 +65,7 @@ def tour(joueur,grille_tir_joueur,grille_adversaire):
     else:
         ligne, colonne= random.randint(0,2),random.randint(0,2)
         print(f"Le maître du jeu tire en position({ligne},{colonne})")
+
     if grille_adversaire[ligne][colonne]=="B":
         print("Touché coulé")
         grille_tir_joueur[ligne][colonne]="x"
@@ -105,6 +106,7 @@ def jeu_bataille_navale():
             if gagne(grille_tirs_joueur):
                 print("Félicitations ! Vous avez gagné.")
                 return True
+
         else:
             print("Tour du maître du jeu.")
             tour(joueur, grille_tirs_maitre, grille_joueur)

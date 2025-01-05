@@ -85,11 +85,13 @@ def epreuve_roulette_mathematique():
     if operation == "addition":
         resultat_correct = sum(nombres)
         operation_texte = "une addition"
+
     elif operation == "soustraction":
         resultat_correct = nombres[0]
         for num in nombres[1:]:
             resultat_correct -= num
         operation_texte = "une soustraction"
+
     elif operation == "multiplication":
         resultat_correct = 1
         for num in nombres:

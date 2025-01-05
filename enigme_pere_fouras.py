@@ -1,3 +1,10 @@
+# Fichier : enigme_pere_fouras.py
+# Projet : Fort Boyard Simulator
+# Auteurs : Ivan Perez
+# Description : Ce fichier contient les fonctions pour gérer l'épreuve des énigmes du Père Fouras,
+# où les joueurs doivent répondre correctement à des énigmes pour gagner une clé.
+
+
 import json
 import random
 
