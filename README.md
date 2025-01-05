@@ -224,8 +224,6 @@ Pour jouer au jeu, vous devez d'abord charger les modules nécessaires. Ensuite,
 2. **Lancer le jeu** : Utilisez la fonction d'introduction pour comprendre les règles et commencer à jouer.
 3. **Participer aux épreuves** : Choisissez les épreuves auxquelles vous souhaitez participer et répondez correctement pour avancer.
 
----
-
-Ce jeu offre une expérience interactive avec des énigmes, des épreuves mathématiques, de logique et de hasard pour défier vos compétences et obtenir des points. Amusez-vous bien avec ce jeu 
+Bonne chance :)
 
 
