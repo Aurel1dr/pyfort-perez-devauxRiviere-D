@@ -24,10 +24,10 @@ def bonneteau():
     print("Règles : Vous devez deviner sous quel bonneteau (A, B ou C) se cache la clé.")
     print("Vous avez 2 essais pour le trouver.")
     print("Les bonneteaux disponibles : ", ", ".join(bonneteaux))
-
+    bonneteau_cle = random.choice(bonneteaux)
     for tentative in range(1, 3):
         # La clé est placée aléatoirement sous un bonneteau
-        bonneteau_cle = random.choice(bonneteaux)
+
         print(f"Tentative {tentative} : Faites votre choix parmi {', '.join(bonneteaux)}.")
         choix_joueur = input("Entrez votre choix (A, B ou C) : ").strip().upper()
 

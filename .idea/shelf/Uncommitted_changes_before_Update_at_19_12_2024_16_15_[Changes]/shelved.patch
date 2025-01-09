@@ -1,0 +1,17 @@
+Index: epreuves_logiques_py/epreuves_logiques.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/epreuves_logiques_py/epreuves_logiques.py b/epreuves_logiques.py
+rename from epreuves_logiques_py/epreuves_logiques.py
+rename to epreuves_logiques.py
+--- a/epreuves_logiques_py/epreuves_logiques.py	(revision 74ac518415bbf441a311575f5202ad642dd96b10)
++++ b/epreuves_logiques.py	(date 1734621116625)
+@@ -95,4 +95,4 @@
+                 print("Le maître du jeu a gagné.")
+                 return False
+         joueur = suiv(joueur)  # Passer au joueur suivant
+-#print(jeu_bataille_navale())
+\ No newline at end of file
++#print(jeu_bataille_navale())

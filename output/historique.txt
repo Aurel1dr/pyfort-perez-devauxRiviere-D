@@ -1,1 +1,60 @@
-# Historique
+# HistoriqueJoueur : IV
+Épreuve : epreuve_maths
+Résultat : Gagné
+Clés gagnées : 1
+----------------------------------------
+Joueur : IV
+Épreuve : enigme_pere_fouras
+Résultat : Perdu
+Clés gagnées : 1
+----------------------------------------
+Joueur : IV
+Épreuve : epreuve_maths
+Résultat : Perdu
+Clés gagnées : 1
+----------------------------------------
+Joueur : IV
+Épreuve : epreuve_maths
+Résultat : Perdu
+Clés gagnées : 1
+----------------------------------------
+Joueur : klhb
+Épreuve : epreuve_hasard
+Résultat : Gagné
+Clés gagnées : 1
+----------------------------------------
+Joueur : klhb
+Épreuve : epreuve_hasard
+Résultat : Perdu
+Clés gagnées : 1
+----------------------------------------
+Joueur : klhb
+Épreuve : epreuve_hasard
+Résultat : Perdu
+Clés gagnées : 1
+----------------------------------------
+Joueur : klhb
+Épreuve : epreuve_hasard
+Résultat : Perdu
+Clés gagnées : 1
+----------------------------------------
+Joueur : klhb
+Épreuve : epreuve_hasard
+Résultat : Perdu
+Clés gagnées : 1
+----------------------------------------
+Joueur : klhb
+Épreuve : epreuve_hasard
+Résultat : Gagné
+Clés gagnées : 2
+----------------------------------------
+Joueur : sfgb
+Épreuve : jeu_bataille_navale
+Résultat : Gagné
+Clés gagnées : 1
+----------------------------------------
+Joueur : sfgb
+Épreuve : epreuve_maths
+Résultat : Gagné
+Clés gagnées : 2
+----------------------------------------
